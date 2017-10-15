@@ -1,0 +1,19 @@
+{
+    "name": "zulucrypto/mobius-php",
+    "description": "API client for Mobius",
+    "autoload": {
+        "psr-4": {
+            "ZuluCrypto\\MobiusApi\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zulu Crypto",
+            "email": "zulucrypto@protonmail.com"
+        }
+    ]
+}
