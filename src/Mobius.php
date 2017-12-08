@@ -53,10 +53,16 @@ class Mobius
             'symbol' => $symbol,
             'address' => $address,
         ]);
+        // if (!isset($response['token_uid'])) throw new \ErrorException('Unexpected API response: ' . print_r($response, true));
 
-        if (!isset($response['token_uid'])) throw new \ErrorException('Unexpected API response: ' . print_r($response, true));
-
-        return $this->getToken($response['token_uid']);
+        // return $this->getToken($response['token_uid']);
+        
+        /* ADDED BY HARSH 
+                - the api does not seems to be returning token_uid - it returns uid: hence using that instead 
+                @david needs to tell us if this is something we need to merge in the original codebase
+        */
+        if (!isset($response['uid'])) throw new \ErrorException('Unexpected API response: ' . print_r($response, true));
+        return $this->getToken($response['uid']);
     }
 
     /**
