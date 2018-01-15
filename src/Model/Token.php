@@ -83,7 +83,7 @@ class Token extends RestApiModel
     public function transferManaged($toAddress, $numTokens)
     {
         $response = $this->apiClient->post('tokens/transfer/managed', [
-            'token_uid' => $this->tokenUid,
+            'token_address_uid' => $this->tokenUid,
             'address_to' => $toAddress,
             'num_tokens' => $numTokens,
         ]);

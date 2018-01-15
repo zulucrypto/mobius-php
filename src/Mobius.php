@@ -53,10 +53,9 @@ class Mobius
             'symbol' => $symbol,
             'address' => $address,
         ]);
-
-        if (!isset($response['token_uid'])) throw new \ErrorException('Unexpected API response: ' . print_r($response, true));
-
-        return $this->getToken($response['token_uid']);
+        
+        if (!isset($response['uid'])) throw new \ErrorException('Unexpected API response: ' . print_r($response, true));
+        return $this->getToken($response['uid']);
     }
 
     /**
